@@ -1,3 +1,11 @@
 <h1><%= @category.name %></h1>
 
-<!-- Add code here to list a category's posts. -->
+<!-- Add code here to list a categorys posts. -->
+
+
+<h1><%= @category.posts.all %></h1>
+<ul>
+<% @category.posts.each do |post| %>
+<li><a href="/posts/<%=post.id%>"><%=post.title%></a></li>
+<%end%>
+</ul>

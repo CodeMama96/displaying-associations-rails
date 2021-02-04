@@ -5,11 +5,12 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+
 	end
 
 	def new
 		@post = Post.new
-		@categories = Category.all
+		
 	end
 
 	def create
@@ -20,6 +21,7 @@ class PostsController < ApplicationController
 	def edit
 		@post = Post.find(params[:id])
 		@categories = Category.all
+		
 	end
 
 	def update

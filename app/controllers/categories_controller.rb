@@ -1,23 +1,29 @@
+
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
 
   def show
+
     @category = Category.find(params[:id])
+  
   end
 
   def new
+
     @category = Category.new
+    @posts = Post.all
   end
 
   def create
-    category = Category.create(category_params)
+    @category = Category.create(category_params)
     redirect_to category_path(category)
   end
 
   def edit
     @category = Category.find(params[:id])
+    #@posts = @Post.all
   end
 
   def update
